@@ -4,8 +4,9 @@ import multerConfig from './config/multer';
 
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
-import authMiddleware from './app/middlewares/auth';
 import FileController from './app/controllers/FileController';
+
+import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
 const upload = multer(multerConfig);
