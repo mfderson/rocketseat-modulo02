@@ -61,6 +61,12 @@ class AppointmentController {
         .json({ error: 'You can only create appointments with providers' });
     }
 
+    if (isProvider.id === req.userId) {
+      return res
+        .status(400)
+        .json({ error: 'Provider and user cannot be the same' });
+    }
+
     // Pega apenas as horas desconsiderando minutos e segundos
     const hourStart = startOfHour(parseISO(date));
 
